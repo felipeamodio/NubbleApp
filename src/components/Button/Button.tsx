@@ -1,15 +1,28 @@
-/* eslint-disable prettier/prettier */
-import {View} from 'react-native';
+/* eslint-disable react/react-in-jsx-scope */
+import {ActivityIndicator} from 'react-native';
 import {Text} from '../Text/Text';
-import { useTheme } from '@shopify/restyle';
-import { Theme } from '../../theme/theme';
+import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box';
 
-export function Button(){
-    const {colors} = useTheme<Theme>();
+interface ButtonProps extends TouchableOpacityBoxProps{
+    title: string;
+    loading?: boolean;
+}
 
-    return(
-        <View>
-            <Text preset="headingLarge" bold>BOTAO</Text>
-        </View>
+export function Button({title, loading, ...touchableOpacityBoxProps}: ButtonProps){
+    return (
+        <TouchableOpacityBox
+            backgroundColor="buttonPrimary"
+            paddingHorizontal="s20"
+            height={50}
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="s16"
+            {...touchableOpacityBoxProps}>
+            {loading ? (
+                <ActivityIndicator />
+            ) : (
+                <Text preset="paragraphMedium" bold style={{color: '#FFFFFF'}}>{title}</Text>
+            )}
+        </TouchableOpacityBox>
     )
 }
