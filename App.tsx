@@ -5,7 +5,7 @@ import {Text} from './src/components/Text';
 function App(): JSX.Element {
   return (
     <SafeAreaView>
-      <Text preset="paragraphMedium">Cofstack</Text>
+      <Text preset="headingMedium">Cofstack</Text>
     </SafeAreaView>
   );
 }
