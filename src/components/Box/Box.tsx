@@ -16,6 +16,7 @@ import {
 import {Theme} from '../../theme/theme';
 
 export const Box = createBox<Theme>();
+export type BoxProps = React.ComponentProps<typeof Box>
 
 // o & sozinho é pra fazer união
 export type TouchableOpacityBoxProps = BackgroundColorProps<Theme> &

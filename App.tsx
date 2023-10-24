@@ -12,7 +12,10 @@ function App(): JSX.Element {
         <View style={{paddingHorizontal: 24}}>
           <Text preset="headingMedium" italic>Coffstack</Text>
         
-          <Button title='Enviar' marginBottom="s24" />
+          <Button title='Primary' marginBottom="s24" />
+          <Button title='Outline' preset='outline' marginBottom="s24" />
+          <Button title='Secondary' preset='secondary' marginBottom="s24" />
+          <Button title='Secondary Outline' preset='secondaryOutline' marginBottom="s24" />
         
           <Button loading title='Enviar' />
         </View>

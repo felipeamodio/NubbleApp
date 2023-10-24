@@ -62,3 +62,6 @@ export const theme = createTheme({
 
 //exportar as props que foram definidas
 export type Theme = typeof theme;
+
+//extraindo as chaves das propriedades de cores
+export type ThemeColors = keyof Theme['colors'];
