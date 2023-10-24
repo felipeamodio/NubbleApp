@@ -8,31 +8,68 @@ interface ButtonUI {
 }
 
 //mapeando as propriedades do botão
-export const buttonPresets: Record<ButtonPreset, ButtonUI> = {
+export const buttonPresets: Record<ButtonPreset, {
+    default: ButtonUI;
+    disabled: ButtonUI;
+}> = {
     primary: {
-        container: {
-            backgroundColor: 'primary',
+        default: {
+            container: {
+                backgroundColor: 'primary',
+            },
+            content: 'primaryContrast',
         },
-        content: 'primaryContrast',
+        disabled: {
+            container: {
+                backgroundColor: 'gray4',
+            },
+            content: 'gray2',
+        },
     },
     outline:  {
-        container: {
-            borderWidth: 1,
-            borderColor: 'primary',
+        default: {
+            container: {
+                borderWidth: 1,
+                borderColor: 'primary',
+            },
+            content: 'primary',
         },
-        content: 'primary',
+        disabled: {
+            container: {
+                borderWidth: 1,
+                borderColor: 'gray4',
+            },
+            content: 'gray2',
+        }
     },
     secondary:  {
-        container: {
-            backgroundColor: 'carrotSecondary',
+        default: {
+            container: {
+                backgroundColor: 'carrotSecondary',
+            },
+            content: 'primaryContrast',
         },
-        content: 'primaryContrast',
+        disabled: {
+            container: {
+                backgroundColor: 'gray4',
+            },
+            content: 'gray2',
+        }
     },
     secondaryOutline:  {
-        container: {
-            borderWidth: 1,
-            borderColor: 'carrotSecondary',
+        default: {
+            container: {
+                borderWidth: 1,
+                borderColor: 'carrotSecondary',
+            },
+            content: 'carrotSecondary',
         },
-        content: 'carrotSecondary',
+        disabled: {
+            container: {
+                borderWidth: 1,
+                borderColor: 'gray4',
+            },
+            content: 'gray2',
+        }
     },
 };
