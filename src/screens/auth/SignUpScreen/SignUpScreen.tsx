@@ -1,5 +1,5 @@
 import { Button } from "../../../components/Button/Button";
-import { Icon } from "../../../components/Icon/Icon";
+import { PasswordInput } from "../../../components/PasswordInput/PasswordInput";
 import { Screen } from "../../../components/Screen/Screen";
 import { Text } from "../../../components/Text/Text";
 import { TextInput } from "../../../components/TextInput/TextInput";
@@ -18,10 +18,9 @@ export function SignUpScreen(){
 
             <TextInput label="Seu username" placeholder="Digite seu e-mail" boxProps={{mb: "s20"}} />
 
-            <TextInput 
+            <PasswordInput 
                 label="Senha"
                 placeholder="Digite sua senha"
-                RightComponent={<Icon color="gray2" name="eyeOn" />}
                 boxProps={{mb: "s48"}}
             />
 
