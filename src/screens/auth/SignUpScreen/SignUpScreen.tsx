@@ -4,13 +4,16 @@ import { PasswordInput } from "../../../components/PasswordInput/PasswordInput";
 import { Screen } from "../../../components/Screen/Screen";
 import { Text } from "../../../components/Text/Text";
 import { TextInput } from "../../../components/TextInput/TextInput";
+import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
 import { RootStackParamList } from "../../../routes/Routes";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function SignUpScreen({navigation}: ScreenProps){
+    const {reset} = useResetNavigationSuccess();
     function submitForm(){
-        navigation.navigate('SuccessScreen', {
+        reset({
             title: 'Sua conta foi criada com sucesso!',
             description: 'Agora é só fazer login na nossa plataforma',
             icon: {
