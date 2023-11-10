@@ -3,7 +3,7 @@ import { Icon } from "../Icon/Icon";
 import { TextInput, TextInputProps } from "../TextInput/TextInput";
 
 // não vou passar o extends pq não tem nenhuma lógica diferente, vai ser exatamente igual
-type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>;
+export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>;
 
 export function PasswordInput(props: PasswordInputProps){
     const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
