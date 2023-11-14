@@ -1,5 +1,5 @@
 import { Controller, UseControllerProps, FieldValues } from "react-hook-form";
-import { TextInput, TextInputProps } from "../TextInput/TextInput";
+import { TextInput, TextInputProps } from "@components";
 
 /* eslint-disable react/react-in-jsx-scope */
 

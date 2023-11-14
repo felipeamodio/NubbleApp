@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Icon } from "../Icon/Icon";
-import { TextInput, TextInputProps } from "../TextInput/TextInput";
+import { TextInput, TextInputProps, Icon } from "@components";
 
 // não vou passar o extends pq não tem nenhuma lógica diferente, vai ser exatamente igual
 export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>;

@@ -1,11 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useForm } from "react-hook-form";
-import { Button } from "../../../components/Button/Button";
-import { FormPasswordInput } from "../../../components/Form/FormPasswordInput";
-import { FormTextInput } from "../../../components/Form/FormTextInput";
-import { Screen } from "../../../components/Screen/Screen";
-import { Text } from "../../../components/Text/Text";
+import { Button, FormPasswordInput, FormTextInput, Screen, Text } from "@components";
 // import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
 import { RootStackParamList } from "../../../routes/Routes";
 import {signUpSchema, SignUpSchema} from './signUnSchema';

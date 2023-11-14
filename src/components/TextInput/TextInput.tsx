@@ -1,9 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useRef } from 'react';
 import {Pressable, TextInput as RNTextInput, TextInputProps as RNTextInputProps, TextStyle} from 'react-native';
-import { useAppTheme } from '../../hooks/useAppTheme';
-import { Box, BoxProps } from '../Box/Box';
-import { $fontsFamily, $fontSizes, Text } from '../Text/Text';
+import { useAppTheme } from '@hooks';
+import { Box, BoxProps, $fontsFamily, $fontSizes, Text } from '@components';
 
 export interface TextInputProps extends RNTextInputProps {
     label: string;

@@ -1,5 +1,5 @@
 import { Controller, UseControllerProps, FieldValues } from "react-hook-form";
-import { PasswordInput, PasswordInputProps } from "../PasswordInput/PasswordInput";
+import { PasswordInput, PasswordInputProps } from "@components";
 
 /* eslint-disable react/react-in-jsx-scope */
 export function FormPasswordInput<FormType extends FieldValues>({control, name, rules, ...passwordInputProps}: PasswordInputProps & UseControllerProps<FormType>){

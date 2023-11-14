@@ -1,8 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
-import {Text} from '../Text/Text';
-import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box';
 import { buttonPresets } from './buttonPresets';
-import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';
+import { ActivityIndicator, TouchableOpacityBox, TouchableOpacityBoxProps, Text } from '@components';
+
 
 
 export type ButtonPreset = 'primary' | 'outline' | 'secondary' | 'secondaryOutline';

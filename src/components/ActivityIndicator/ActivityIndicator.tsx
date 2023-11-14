@@ -1,6 +1,6 @@
 import { useTheme } from '@shopify/restyle';
 import {ActivityIndicator as RNActivityIndicator, ActivityIndicatorProps} from 'react-native';
-import { Theme, ThemeColors } from '../../theme/theme';
+import { Theme, ThemeColors } from '@theme';
 
 //esse Omit ele omite que use a propriedade color do componente original
 interface Props extends Omit<ActivityIndicatorProps, 'color'> {
