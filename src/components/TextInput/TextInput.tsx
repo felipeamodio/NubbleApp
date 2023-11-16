@@ -1,8 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useRef } from 'react';
 import {Pressable, TextInput as RNTextInput, TextInputProps as RNTextInputProps, TextStyle} from 'react-native';
+
 import { useAppTheme } from '@hooks';
-import { Box, BoxProps, $fontsFamily, $fontSizes, Text } from '@components';
+
+import {Box, BoxProps} from '../Box/Box';
+import { $fontsFamily, $fontSizes, Text } from '../Text/Text';
 
 export interface TextInputProps extends RNTextInputProps {
     label: string;
@@ -18,7 +21,7 @@ const $textInputStyle: TextStyle = {
     padding: 0,
     fontFamily: $fontsFamily.regular,
     ...$fontSizes.paragraphMedium,
-}
+};
 
 export function TextInput({label, errorMessage, RightComponent, boxProps, ...rnTextInputProps}: TextInputProps){
     const {colors} = useAppTheme();
@@ -37,30 +40,30 @@ export function TextInput({label, errorMessage, RightComponent, boxProps, ...rnT
         padding: 's16',
         borderColor: errorMessage ? 'error' : 'gray4',
         borderRadius: 's12',
-    }
+    };
 
     return (
         <Box {...boxProps}>
             <Pressable onPress={focusInput}>
-                <Text preset='paragraphMedium' marginBottom='s4'>{label}</Text>
+                <Text preset="paragraphMedium" marginBottom="s4">{label}</Text>
                 <Box {...$textInputContainer}>
                     <RNTextInput
-                        autoCapitalize='none'
+                        autoCapitalize="none"
                         style={$textInputStyle}
                         placeholderTextColor={colors.gray2}
                         ref={inputRef}
                         {...rnTextInputProps}
                     />
-                    {RightComponent &&(
-                    <Box ml='s16' justifyContent='center'>
+                    {RightComponent && (
+                    <Box ml="s16" justifyContent="center">
                         {RightComponent}
                     </Box>
                     )}
                 </Box>
                 {errorMessage && (
-                    <Text preset='paragraphSmall' bold color='error'>{errorMessage}</Text>
+                    <Text preset="paragraphSmall" bold color="error">{errorMessage}</Text>
                 )}
             </Pressable>
         </Box>
-    )
+    );
 }

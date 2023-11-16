@@ -1,5 +1,6 @@
 import { ThemeColors } from '../../theme/theme';
 import { TouchableOpacityBoxProps } from '../Box/Box';
+
 import { ButtonPreset } from './Button';
 
 interface ButtonUI {
@@ -40,7 +41,7 @@ export const buttonPresets: Record<ButtonPreset, {
                 borderColor: 'gray4',
             },
             content: 'gray2',
-        }
+        },
     },
     secondary:  {
         default: {
@@ -54,7 +55,7 @@ export const buttonPresets: Record<ButtonPreset, {
                 backgroundColor: 'gray4',
             },
             content: 'gray2',
-        }
+        },
     },
     secondaryOutline:  {
         default: {
@@ -70,6 +71,6 @@ export const buttonPresets: Record<ButtonPreset, {
                 borderColor: 'gray4',
             },
             content: 'gray2',
-        }
+        },
     },
 };

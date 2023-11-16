@@ -1,5 +1,6 @@
-import { Controller, UseControllerProps, FieldValues } from "react-hook-form";
-import { TextInput, TextInputProps } from "@components";
+import { Controller, UseControllerProps, FieldValues } from 'react-hook-form';
+
+import { TextInput, TextInputProps } from '@components';
 
 /* eslint-disable react/react-in-jsx-scope */
 
@@ -8,8 +9,8 @@ import { TextInput, TextInputProps } from "@components";
 
 // export function FormTextInput({control, name, rules, ...textInputProps}: TextInputProps & {control: any; name: string; rules: any;}){
 export function FormTextInput<FormType extends FieldValues>({control, name, rules, ...textInputProps}: TextInputProps & UseControllerProps<FormType>){
-    return(
-        <Controller 
+    return (
+        <Controller
                 control={control}
                 name={name}
                 rules={rules}
@@ -22,5 +23,5 @@ export function FormTextInput<FormType extends FieldValues>({control, name, rule
                      />
                 )}
             />
-    )
+    );
 }

@@ -1,9 +1,10 @@
-import { Controller, UseControllerProps, FieldValues } from "react-hook-form";
-import { PasswordInput, PasswordInputProps } from "@components";
+import { Controller, UseControllerProps, FieldValues } from 'react-hook-form';
+
+import { PasswordInput, PasswordInputProps } from '@components';
 
 /* eslint-disable react/react-in-jsx-scope */
 export function FormPasswordInput<FormType extends FieldValues>({control, name, rules, ...passwordInputProps}: PasswordInputProps & UseControllerProps<FormType>){
-    return(
+    return (
         <Controller
             control={control} //definindo o componente atráves do hook useForm
             name={name}
@@ -17,5 +18,5 @@ export function FormPasswordInput<FormType extends FieldValues>({control, name, 
               />
             )}
           />
-    )
+    );
 }

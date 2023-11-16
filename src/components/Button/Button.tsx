@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { buttonPresets } from './buttonPresets';
 import { ActivityIndicator, TouchableOpacityBox, TouchableOpacityBoxProps, Text } from '@components';
+
+import { buttonPresets } from './buttonPresets';
 
 
 
@@ -38,5 +39,5 @@ export function Button({
                 <Text preset="paragraphMedium" bold color={buttonPreset.content}>{title}</Text>
             )}
         </TouchableOpacityBox>
-    )
+    );
 }

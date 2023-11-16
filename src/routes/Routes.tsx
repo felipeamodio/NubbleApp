@@ -1,8 +1,9 @@
 import {NavigationContainer} from '@react-navigation/native';
  import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import { IconProps } from '@components';
 import {ForgotPasswordScreen, LoginScreen, SignUpScreen, SuccessScreen} from '@screens';
- 
+
  // tipagem para as rotas
  export type RootStackParamList = {
   LoginScreen: undefined;
@@ -16,7 +17,7 @@ import {ForgotPasswordScreen, LoginScreen, SignUpScreen, SuccessScreen} from '@s
  };
 
  const Stack = createNativeStackNavigator<RootStackParamList>();
- 
+
  export function Router() {
    return (
      <NavigationContainer>
