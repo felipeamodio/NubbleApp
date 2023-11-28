@@ -1,19 +1,18 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {zodResolver} from '@hookform/resolvers/zod';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useForm } from 'react-hook-form';
 
+// eslint-disable-next-line import/order
 import { Button, FormPasswordInput, FormTextInput, Screen, Text } from '@components';
 
 // import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
-import { RootStackParamList } from '../../../routes/Routes';
+
+import { AuthScreenProps } from '@routes';
 
 import {signUpSchema, SignUpSchema} from './signUnSchema';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function SignUpScreen({navigation}: ScreenProps){
+export function SignUpScreen({navigation}: AuthScreenProps<'SignUpScreen'>){
     // const {reset} = useResetNavigationSuccess();
     const {control, formState, handleSubmit} = useForm<SignUpSchema>({
         resolver: zodResolver(signUpSchema),
