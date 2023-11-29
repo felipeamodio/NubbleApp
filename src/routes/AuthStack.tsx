@@ -20,7 +20,7 @@ export type AuthStackParamList = {
     ForgotPasswordScreen: undefined;
    };
 
-const Stack = createNativeStackNavigator<AppStackParamList>();
+const Stack = createNativeStackNavigator<AuthStackParamList>();
 
 export function AuthStack(){
     return (
