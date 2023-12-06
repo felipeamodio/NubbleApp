@@ -1,4 +1,5 @@
 import {createTheme} from '@shopify/restyle';
+import { ViewStyle } from 'react-native/types';
 
 export const palette = {
   greenPrimary: '#074C4E',
@@ -59,6 +60,16 @@ export const theme = createTheme({
         defaults: {},
     },
 });
+
+// link de shadow https://ethercreative.github.io/react-native-shadow-generator/
+
+export const $shadowProps: ViewStyle = {
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowRadius: 12,
+    shadowOffset: {width: 0, height: -3},
+};
 
 //exportar as props que foram definidas
 export type Theme = typeof theme;
