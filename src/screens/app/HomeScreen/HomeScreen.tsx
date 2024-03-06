@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { FlatList, ListRenderItemInfo, StyleProp, ViewStyle } from 'react-native';
 
 import { Post, usePostList } from '@domain';
@@ -17,12 +18,15 @@ const $screen: StyleProp<ViewStyle> = {
 
 
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>){
-    const {error, loading, postList, refetch} = usePostList();
+    const {error, loading, postList, refetch, fetchNextPage} = usePostList();
 
     //nesse ListRenderItemInfo eu posso passar a interface do item q quero renderizar
     function renderItem({item}: ListRenderItemInfo<Post>){
         return <PostItem post={item} />;
     }
+
+    // onEndReached={} é uma função que chama quando está chegando no limite da lista
+    // onEndReachedThreshold={} é uma função que chama a porcentagem pra atualizar a próxima página da lista, 0.5 é na metade da lista
 
     return (
         <Screen style={$screen}>
@@ -31,6 +35,8 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>){
                 data={postList}
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
+                onEndReached={fetchNextPage}
+                onEndReachedThreshold={0.1}
                 contentContainerStyle={{flex: postList.length === 0 ? 1 : undefined}}
                 ListHeaderComponent={<HomeHeader />}
                 ListEmptyComponent={
