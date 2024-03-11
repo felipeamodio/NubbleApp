@@ -20,7 +20,7 @@ const $screen: StyleProp<ViewStyle> = {
 
 
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>){
-    const {error, loading, postList, refresh, fetchNextPage} = usePostList();
+    const {error, loading, list: postList, refresh, fetchNextPage} = usePostList();
 
     const flatListRef = useRef<FlatList<Post>>(null);
     useScrollToTop(flatListRef);
