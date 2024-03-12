@@ -11,9 +11,10 @@ interface ScreenProps extends BoxProps {
     children: React.ReactNode;
     canGoBack?: boolean;
     scrollable?: boolean;
+    title?: string;
 }
 
-export function Screen({children, canGoBack = false, scrollable = false, style, ...boxPros}: ScreenProps){
+export function Screen({children, canGoBack = false, scrollable = false, title, style, ...boxPros}: ScreenProps){
     const {top, bottom} = useAppSafeArea();
     const {colors} = useAppTheme();
     const navigation = useNavigation();
