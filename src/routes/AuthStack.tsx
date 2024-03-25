@@ -4,11 +4,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { IconProps } from '@components';
 import { ForgotPasswordScreen, LoginScreen, SignUpScreen, SuccessScreen } from '@screens';
 
-export type AppStackParamList = {
-    HomeScreen: undefined;
-    SettingsScreen: undefined;
-}
-
 export type AuthStackParamList = {
     LoginScreen: undefined;
     SignUpScreen: undefined;

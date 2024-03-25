@@ -1,8 +1,12 @@
+import { usePostCommentList } from 'src/domain/PostComment/useCases/usePostCommentList';
+
 import { Box, Screen, Text } from '@components';
 import { AppScreenProps } from '@routes';
 
 export function PostCommentScreen({route}: AppScreenProps<'PostCommentScreen'>){
-    // route.params.postId
+    const postId = route.params.postId;
+    usePostCommentList(postId);
+
     return (
         <Screen canGoBack title="Comentários">
             <Box>
