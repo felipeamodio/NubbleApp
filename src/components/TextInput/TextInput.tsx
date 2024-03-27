@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+
 import { useRef } from 'react';
 import {Pressable, TextInput as RNTextInput, TextInputProps as RNTextInputProps, TextStyle} from 'react-native';
 
@@ -15,7 +15,7 @@ export interface TextInputProps extends RNTextInputProps {
 }
 
 // flexGrow faz com que ele ocupe todo o espaço dentro do box e o flexShrink faz com que ele não sobrescreva por cima
-const $textInputStyle: TextStyle = {
+export const $textInputStyle: TextStyle = {
     flexGrow: 1,
     flexShrink: 1,
     padding: 0,
