@@ -15,6 +15,13 @@ async function getList(postId: number, page: number): Promise<Page<PostComment>>
         meta: apiAdapter.toMetaDataPage(postCommentPageAPI.meta),
     };
 }
+
+async function create(post_id: number, message: string): Promise<PostComment> {
+    const postCommentAPI = await postCommentApi.create(post_id, message);
+    return postCommentAdapter.toPostComment(postCommentAPI);
+}
+
 export const postCommentService = {
     getList,
+    create,
 };
