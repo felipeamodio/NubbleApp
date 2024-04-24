@@ -2,8 +2,10 @@ import {api, PageAPI, PageParams} from '@api';
 
 import {PostCommentAPI} from './postCommentTypes';
 
+const PATH = 'user/post_comment';
+
 async function getList(post_id: number, pageParams?: PageParams): Promise<PageAPI<PostCommentAPI>> {
-    const response = await api.get<PageAPI<PostCommentAPI>>('user/post_comment', {
+    const response = await api.get<PageAPI<PostCommentAPI>>(PATH, {
         params: {
             post_id,
          ...pageParams,
@@ -13,11 +15,18 @@ async function getList(post_id: number, pageParams?: PageParams): Promise<PageAP
 }
 
 async function create(post_id: number, message: string): Promise<PostCommentAPI> {
-    const response = await api.post<PostCommentAPI>('user/post_comment', {post_id, message});
+    const response = await api.post<PostCommentAPI>(PATH, {post_id, message});
+    return response.data;
+}
+
+async function remove(postCommentId: number): Promise<{message: string}> { //retorno da promise que é um objeto {} que dentro tem um message
+    const response = await api.delete<{message: string}>(`${PATH}/${postCommentId}`);
+
     return response.data;
 }
 
 export const postCommentApi = {
     getList,
     create,
+    remove,
 };

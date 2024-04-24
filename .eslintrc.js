@@ -4,6 +4,7 @@ module.exports = {
   plugins: ['import'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'eslint-disable no-catch-shadow': 'off',
   },
   overrides: [
     {

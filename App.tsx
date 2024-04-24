@@ -4,6 +4,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Router } from './src/routes/Routes';
 import { theme } from './src/theme/theme';
 
+if (__DEV__) {
+  require('./ReactotronConfig');
+}
+
 function App(): JSX.Element {
   return (
     <SafeAreaProvider>
